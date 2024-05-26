@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      margin: 0;
+    }
+    .container{
+      background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(sghar.jpg);
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+    h1{
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: inline-block;
+    }
+
+    #myButton{
+      position: absolute;
+      cursor: pointer;
+      
+
+    }
+    .btn{
+      width: 80px;
+      height: 40px;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      position: absolute;
+      bottom: 94px;
+      border: none;
+      transition: all 0.3s ease;
+
+      
+    }
+    .btn:hover{
+      transform: scale(1.1);
+    }
+    .mhmd{
+      position: absolute;
+      bottom: 70px;
+    }
+    
+  </style>
+  <div class="container">
+    <center><h1>Happy Mother's Dayyyyy &#10084;</h1></center>
+    <h1 class="mhmd">ena mohamed thebni akther wehed ouchy ?</h1>
+    <a href="index2.html"><button class="btn" id="myButton1" style="left: 800px;">betbia</button></a>
+    <button class="btn" id="no-button" style="left: 1000px;">lkol kif kif</button>
+  </div>
+
+
+  <script>
+
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+    const noButton = document.getElementById('no-button');
+
+    noButton.addEventListener('mouseover', () => {
+        const container = document.querySelector('.container');
+        const containerRect = container.getBoundingClientRect();
+        const buttonRect = noButton.getBoundingClientRect();
+
+        const randomX = Math.floor(Math.random() * (containerRect.width - buttonRect.width));
+        const randomY = Math.floor(Math.random() * (containerRect.height - buttonRect.height));
+
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${randomX}px`;
+        noButton.style.top = `${randomY}px`;
+    });
+  });
+  function changeindex(){
+    window.location.href = "index2.html"
+  }
+
+
+  </script>
+
+</body>
+</html>
